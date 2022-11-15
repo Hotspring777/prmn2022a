@@ -17,5 +17,7 @@ class Exercise3_2 {
         int sum = number1 + number2;
 
         System.out.println(number1 + " + " + number2 + " = " + sum);
+
     }
+
 }
