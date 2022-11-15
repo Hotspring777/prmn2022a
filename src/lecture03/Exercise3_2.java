@@ -1,23 +1,25 @@
 package lecture03;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 class Exercise3_2 {
     public static void main(String[] args) {
-        System.out.println("1つ目の整数を入力してください:");
+        System.out.println("何行分入力しますか？");
         Scanner scanner = new Scanner(System.in);
-        //一行読み取ってから、文字列を整数型に変換
-        String num1 = scanner.nextLine();
-        int number1 = Integer.parseInt(num1);
+        int number = scanner.nextInt(); scanner.nextLine();
 
-        System.out.println("2つ目の整数を入力してください:");
-        String num2 = scanner.nextLine();
-        int number2 = Integer.parseInt(num2);
+        ArrayList<String> list = new ArrayList<>();
+        for (int i = 1; i < number + 1; i++) {
+            System.out.println(i + "行目:");
+            String input = scanner.nextLine();
+            list.add(input);
+        }
 
-        int sum = number1 + number2;
-
-        System.out.println(number1 + " + " + number2 + " = " + sum);
-
+        System.out.println("入力した文字列");
+        for (String string : list) {
+            System.out.println("[" + list.indexOf(string) + "] " + string);
+        }
     }
 
 }
